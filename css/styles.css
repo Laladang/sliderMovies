@@ -41,14 +41,18 @@ h1 {
   position: relative;
   margin: 1em auto;
   height: 100%;
-  width: 650px; }
+  text-align: center; }
 
 .movie {
   position: relative;
   width: 650px;
   height: auto;
   display: none;
+  margin: 1em auto;
   /* Title */ }
+  @media (max-width: 650px) {
+    .movie {
+      width: 100%; } }
   .movie h2 {
     margin: 0;
     font-family: "Montserrat", sans-serif;
@@ -56,6 +60,9 @@ h1 {
     text-transform: uppercase;
     font-size: 1em;
     letter-spacing: 1px; }
+  @media (max-width: 650px) {
+    .movie img {
+      width: 100%; } }
 
 .movie.visible {
   display: block; }
@@ -68,6 +75,9 @@ h1 {
   margin-bottom: 8px;
   /* Synopsis */
   /* Rewiew */ }
+  @media (max-width: 650px) {
+    .movie-description {
+      position: relative; } }
   .movie-description p {
     padding: 0;
     margin: 0; }
@@ -107,7 +117,7 @@ h1 {
 /* Arrow nav */
 a.movie-next,
 a.movie-previous {
-  position: absolute;
+  position: fixed;
   display: block;
   top: 40%;
   z-index: 99;

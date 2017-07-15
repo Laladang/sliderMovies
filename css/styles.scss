@@ -71,7 +71,7 @@ a:focus {
 	position: relative;
 	margin: 1em auto;
 	height: 100%;
-	width: 650px;
+	text-align: center;
 }
 
 .movie {	
@@ -79,6 +79,10 @@ a:focus {
 	width: 650px;
 	height: auto;
 	display: none;
+	margin: 1em auto;
+	@media(max-width: 650px){
+			width: 100%;
+	}
 
 	/* Title */
 	h2{
@@ -88,6 +92,12 @@ a:focus {
 		text-transform: uppercase;
 		font-size: 1em;
 		letter-spacing: 1px;
+	}
+
+	img {
+		@media(max-width: 650px){
+			width: 100%;
+		}
 	}
 }
 
@@ -101,6 +111,10 @@ a:focus {
 	padding: 1em 3em;
 	background-color: rgba(0,0,0,0.5);
 	margin-bottom: 8px;
+
+	@media(max-width: 650px){
+		position: relative;
+	}
 
 	p {
 		padding: 0;
@@ -158,7 +172,7 @@ a:focus {
 
 a.movie-next, 
 a.movie-previous {
-	position: absolute;
+	position: fixed;
 	display: block;
 	top: 40%;
 	z-index: 99;

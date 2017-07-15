@@ -19,6 +19,7 @@ $(document).ready(function() {
 		const movie = $('<div>', {class: 'movie'})
 		const movieDescription = $('<div>', {class: 'movie-description'})
 
+
 		/* Image */
 		if(_d.image == null){
 			_d.image = 'images/img-default.jpg';
@@ -34,7 +35,7 @@ $(document).ready(function() {
 		movieDescription.append(eTitle)
 
 		/* Note */
-		var note = Math.round(_d.note)
+		var note = Math.round(_d.note) / 2
 		const eNote = $('<p>', {class: 'movie-note'})
 		n = 0;
 		while (n < note){
@@ -42,10 +43,15 @@ $(document).ready(function() {
 			eNote.append(eNoteImg);
 			n++;
 		}
+		while (n != 5){
+			const eNoteImg = $('<img>', {src: 'images/no-star.png'})[i]
+			eNote.append(eNoteImg);
+			n++;
+		}
 		movieDescription.append(eNote)
 
 		/* Synopsis */
-		const eSynopsis = $('<p>', {class: 'movie-synopsis'}).text(_d.synopsis.substring(0,200) + '...')[0]
+		const eSynopsis = $('<p>', {class: 'movie-synopsis'}).text(_d.synopsis.substring(0,250) + '...')[0]
 		movieDescription.append(eSynopsis)
 
 		/* Bullet */
@@ -67,14 +73,11 @@ $(document).ready(function() {
 
 	// Previous movie
 	$('a.movie-previous').click(function() {
+		
 		$('.movie').eq(i).removeClass('visible');
 		$('.slider-bullet li').eq(i).removeClass('active');
 		
-		if((i % mLenght) == 0){
-			i = mLenght-1;
-		} else {
-			i--			
-		}
+		i = --i % mLenght;
 		$('.movie').eq(i).addClass('visible');
 		$('.slider-bullet li').eq(i).addClass('active');
 	});
@@ -84,11 +87,7 @@ $(document).ready(function() {
 		$('.movie').eq(i).removeClass('visible');
 		$('.slider-bullet li').eq(i).removeClass('active');
 
-		if((i % mLenght) == (mLenght - 1)){
-			i = 0;	
-		} else {
-			i++
-		}
+		i = ++i % mLenght;
 		$('.movie').eq(i).addClass('visible');
 		$('.slider-bullet li').eq(i).addClass('active');
 	});
