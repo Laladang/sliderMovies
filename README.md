@@ -1,6 +1,6 @@
 # sliderMovies
 
-Jquery coverflow movies using the Moviebd.org API :
+JQuery coverflow movies using the Moviebd.org API
 
 ## Demo
 
