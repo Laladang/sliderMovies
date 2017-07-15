@@ -1,0 +1,182 @@
+
+/* 	VARIABLES
+	=========	*/
+
+$primaryColor : #FFF;
+$secondaryColor : #4DBEC5;
+
+$bgColor: #2D3647;
+
+
+$primaryFont : 'Montserrat', sans-serif;
+$secondaryFont : 'Signika', sans-serif;
+
+@mixin bullet($bgColor, $pxBorder){
+	width: 15px;
+	height: 15px;
+	margin: 3px;
+	background: $bgColor;
+	border: $pxBorder solid $primaryColor;
+	opacity: 0.5;
+	border-radius: 50px;
+}
+
+
+/* 	CLEAR
+	=====	*/
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+ul, ol, li{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+a,
+a:hover, 
+a:focus {
+	text-decoration: none;
+}
+
+/* 	MAIN CONTENT
+	============	*/
+
+ body {
+ 	margin: 0;
+ 	padding: 0;
+ 	font-family: $secondaryFont;
+ 	color: $primaryColor;
+ 	font-size: 18px;
+ 	line-height: 1.5em;
+ 	background-color: $bgColor;
+ }
+
+ h1 {
+ 	color: $secondaryColor;
+ 	font-family: $primaryFont;
+ 	text-align: center;
+ 	text-transform: uppercase;
+ 	font-size: 1.5em;
+ 	margin: 1em 0;
+ }
+
+/* 	SLIDER
+	======	*/
+
+.slider-movie {
+	position: relative;
+	margin: 1em auto;
+	height: 100%;
+	width: 650px;
+}
+
+.movie {	
+	position: relative;
+	width: 650px;
+	height: auto;
+	display: none;
+
+	/* Title */
+	h2{
+		margin: 0;
+		font-family: $primaryFont;
+		color: $secondaryColor;
+		text-transform: uppercase;
+		font-size: 1em;
+		letter-spacing: 1px;
+	}
+}
+
+.movie.visible{
+	display: block;
+}
+
+.movie-description {
+	position: absolute;
+	bottom: 0;
+	padding: 1em 3em;
+	background-color: rgba(0,0,0,0.5);
+	margin-bottom: 8px;
+
+	p {
+		padding: 0;
+		margin: 0;
+	}
+
+	/* Synopsis */
+	.movie-synopsis {
+		font-family: $secondaryFont;
+	}
+
+	/* Rewiew */
+	.movie-note {
+		margin: 0;
+
+		img{
+			width: 15px;
+			height: auto;
+		}
+	}
+}
+
+
+/* Bullet nav */
+
+.slider-bullet {
+	bottom: 0;
+	margin: 1em auto;
+	width: 100%;
+	text-align: center;
+	z-index: 1;
+
+	li {
+		width: 15px;
+		height: 15px;
+		margin: 3px;
+		background: $primaryColor;
+		border: 0;
+		opacity: 0.5;
+		border-radius: 50px;
+		cursor: pointer;
+		display: inline-block;
+		z-index: 1;
+	}
+}
+
+.slider-bullet li.active {
+	width: 10px;
+	height: 10px;
+	background-color: $secondaryColor;
+	border: 4px solid $primaryColor;
+}
+
+/* Arrow nav */
+
+a.movie-next, 
+a.movie-previous {
+	position: absolute;
+	display: block;
+	top: 40%;
+	z-index: 99;
+	padding: 1em;
+	width: auto;
+	height: auto;
+	background-color: $secondaryColor;
+	opacity: 0.8;
+	color: $primaryColor;
+	cursor: pointer;
+	-webkit-transition: all 0.2s ease;
+}
+
+a.movie-next {
+	right: 0;	
+}
+
+a.movie-next:hover, 
+a.movie-previous:hover {
+	opacity: 1;
+}

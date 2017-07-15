@@ -1,0 +1,130 @@
+/* 	VARIABLES
+	=========	*/
+/* 	CLEAR
+	=====	*/
+html, body {
+  margin: 0;
+  padding: 0; }
+
+ul, ol, li {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none; }
+
+/* 	MAIN CONTENT
+	============	*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Signika", sans-serif;
+  color: #FFF;
+  font-size: 18px;
+  line-height: 1.5em;
+  background-color: #2D3647; }
+
+h1 {
+  color: #4DBEC5;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  margin: 1em 0; }
+
+/* 	SLIDER
+	======	*/
+.slider-movie {
+  position: relative;
+  margin: 1em auto;
+  height: 100%;
+  width: 650px; }
+
+.movie {
+  position: relative;
+  width: 650px;
+  height: auto;
+  display: none;
+  /* Title */ }
+  .movie h2 {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    color: #4DBEC5;
+    text-transform: uppercase;
+    font-size: 1em;
+    letter-spacing: 1px; }
+
+.movie.visible {
+  display: block; }
+
+.movie-description {
+  position: absolute;
+  bottom: 0;
+  padding: 1em 3em;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 8px;
+  /* Synopsis */
+  /* Rewiew */ }
+  .movie-description p {
+    padding: 0;
+    margin: 0; }
+  .movie-description .movie-synopsis {
+    font-family: "Signika", sans-serif; }
+  .movie-description .movie-note {
+    margin: 0; }
+    .movie-description .movie-note img {
+      width: 15px;
+      height: auto; }
+
+/* Bullet nav */
+.slider-bullet {
+  bottom: 0;
+  margin: 1em auto;
+  width: 100%;
+  text-align: center;
+  z-index: 1; }
+  .slider-bullet li {
+    width: 15px;
+    height: 15px;
+    margin: 3px;
+    background: #FFF;
+    border: 0;
+    opacity: 0.5;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    z-index: 1; }
+
+.slider-bullet li.active {
+  width: 10px;
+  height: 10px;
+  background-color: #4DBEC5;
+  border: 4px solid #FFF; }
+
+/* Arrow nav */
+a.movie-next,
+a.movie-previous {
+  position: absolute;
+  display: block;
+  top: 40%;
+  z-index: 99;
+  padding: 1em;
+  width: auto;
+  height: auto;
+  background-color: #4DBEC5;
+  opacity: 0.8;
+  color: #FFF;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease; }
+
+a.movie-next {
+  right: 0; }
+
+a.movie-next:hover,
+a.movie-previous:hover {
+  opacity: 1; }
+
+/*# sourceMappingURL=styles.css.map */
