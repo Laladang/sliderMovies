@@ -1,6 +1,6 @@
 # sliderMovies
 
-JQuery coverflow movies using the Moviebd.org API
+JQuery slider for latest movie releases, using the Moviebd.org API
 
 ## Demo
 
